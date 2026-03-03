@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Startup Validator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🚀 AI Startup Validator</h1>
+
+    <input type="text" id="title" placeholder="Startup Idea Title">
+
+    <textarea id="description" placeholder="Describe your startup idea..."></textarea>
+
+    <button onclick="submitIdea()">Analyze Idea</button>
+
+    <div id="loading" class="hidden">Analyzing idea... ⏳</div>
+
+    <div id="result"></div>
+
+    <br><br>
+    <a href="dashboard.html">View All Ideas →</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
