@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Ideas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>📋 All Submitted Ideas</h1>
+  <div id="ideas"></div>
+  <br>
+  <a href="index.html">← Back to Submit</a>
+</div>
+
+<script>
+async function loadIdeas() {
+
+  const res = await fetch("http://localhost:5000/ideas");
+  const ideas = await res.json();
+
+  let html = "";
+
+  ideas.forEach(idea => {
+    html += `
+      <div class="card">
+        <h3>${idea.title}</h3>
+        <a href="detail.html?id=${idea.id}">View Report</a>
+      </div>
+    `;
+  });
+
+  document.getElementById("ideas").innerHTML = html;
+}
+
+loadIdeas();
+</script>
+
+</body>
+</html>
